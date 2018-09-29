@@ -1,5 +1,4 @@
 {% set version = '0.0-4' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,30 +9,31 @@ package:
 source:
   fn: assertive.properties_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/assertive.properties_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/assertive.properties/assertive.properties_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/assertive.properties_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/assertive.properties/assertive.properties_{{ version }}.tar.gz
   sha256: 5c0663fecb4b7c30f2e1d65da8644534fcfe97fb3d8b51f74c1327cd14291a6b
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-assertive.base >=0.0_7
-
   run:
     - r-base
     - r-assertive.base >=0.0_7
 
 test:
   commands:
-    - $R -e "library('assertive.properties')"  # [not win]
+    - $R -e "library('assertive.properties')"           # [not win]
     - "\"%R%\" -e \"library('assertive.properties')\""  # [win]
 
 about:
@@ -53,3 +53,5 @@ extra:
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
