@@ -1,4 +1,4 @@
-{% set version = '0.0-4' %}
+{% set version = "0.0-5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/assertive.properties_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/assertive.properties/assertive.properties_{{ version }}.tar.gz
-  sha256: 5c0663fecb4b7c30f2e1d65da8644534fcfe97fb3d8b51f74c1327cd14291a6b
+  sha256: b68954f53082561f0242682611bf3373e0bf30d8ac2256d82474edc5f992f4dd
 
 build:
-  merge_build_host: True  # [win]
-  number: 1003
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -38,10 +38,7 @@ test:
 about:
   home: https://bitbucket.org/richierocks/assertive.properties
   license: GPL-3.0-or-later
-  summary: A set of predicates and assertions for checking the properties of variables, such
-    as length, names and attributes.  This is mainly for use by other package developers
-    who want to include run-time testing features in their own packages.  End-users
-    will usually want to use assertive directly.
+  summary: A set of predicates and assertions for checking the properties of variables, such as length, names and attributes.  This is mainly for use by other package developers who want to include run-time testing features in their own packages.  End-users will usually want to use assertive directly.
   license_family: GPL3
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
