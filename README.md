@@ -1,11 +1,11 @@
-About r-assertive.properties
-============================
+About r-assertive.properties-feedstock
+======================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-assertive.properties-feedstock/blob/main/LICENSE.txt)
 
 Home: https://bitbucket.org/richierocks/assertive.properties
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-assertive.properties-feedstock/blob/main/LICENSE.txt)
 
 Summary: A set of predicates and assertions for checking the properties of variables, such as length, names and attributes.  This is mainly for use by other package developers who want to include run-time testing features in their own packages.  End-users will usually want to use assertive directly.
 
