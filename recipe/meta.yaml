@@ -1,6 +1,5 @@
 {% set version = "0.0-5" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-assertive.properties
@@ -13,8 +12,7 @@ source:
   sha256: b68954f53082561f0242682611bf3373e0bf30d8ac2256d82474edc5f992f4dd
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   noarch: generic
   rpaths:
     - lib/R/lib/
